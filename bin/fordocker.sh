@@ -29,13 +29,17 @@ PACKAGES_MEMCACHED="libmemcached11 libmemcachedutil2"
 PACKAGES_LDAP="libldap-2.4-2"
 
 apt-get update
-apt-get install -y --no-install-recommends apt-transport-https \
+apt-get install -y --no-install-recommends apt-transport-https wget \
     $BUILD_PACKAGES \
     $PACKAGES_POSTGRES \
     $PACKAGES_MYMARIA \
     $PACKAGES_RUNTIME \
     $PACKAGES_MEMCACHED \
     $PACKAGES_LDAP
+
+##Symfony client
+wget https://get.symfony.com/cli/installer -O - | bash
+mv /root/.symfony/bin/symfony /usr/local/bin/symfony
 
 docker-php-ext-install -j $(nproc) intl \
        mysqli \
