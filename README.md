@@ -15,7 +15,7 @@ Make sure you have [Composer installed](https://getcomposer.org/download/)
 and then run:
 
 ```
-composer install
+bin/mydocker.sh composer install
 ```
 
 You may alternatively need to run `php composer.phar install`, depending
@@ -57,7 +57,7 @@ Then, to start the web server, open a terminal, move into the
 project, and run:
 
 ```
-symfony serve
+ bin/mydockerRoot.sh symfony serve
 ```
 
 (If this is your first time using this command, you may see an
